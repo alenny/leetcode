@@ -1,4 +1,4 @@
 /* for debug only */
 
-var lengthOfLongestSubstring = require('../src/longest-substring-without-repeat');
-var result = lengthOfLongestSubstring('abba');
+var func = require('../src/sum-of-two-integers');
+var result = func(1, 2);
