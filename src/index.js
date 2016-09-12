@@ -1,4 +1,4 @@
 /* for debug only */
 
-var func = require('../src/sum-of-two-integers');
-var result = func(1, 2);
+var func = require('../src/reverse-vowels');
+var result = func('a.');
