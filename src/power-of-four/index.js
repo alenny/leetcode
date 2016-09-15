@@ -6,8 +6,9 @@ var isPowerOfFour = function (num) {
     if (num === 0) {
         return false;
     }
+    const multi = 1000000000;
     var result = Math.log(num) / Math.log(4);
-    return Math.floor(result) === result;
+    return Math.round(result) * multi === Math.round(result * multi);
 };
 
 var isPowerOfFour_Binary = function (num) {
