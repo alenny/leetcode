@@ -1,6 +1,6 @@
-var Class = require('../src/range-sum-query');
+var Class = require('../src/range-sum-query-immutable');
 var assert = require('assert');
-describe('range-sum-query', function () {
+describe('range-sum-query-immutable', function () {
     describe('[-2, 0, 3, -5, 2, -1]', function () {
         var numArray = new Class([-2, 0, 3, -5, 2, -1]);
         it('should return 1 when given range 0,2', function () {
