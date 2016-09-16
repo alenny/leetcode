@@ -3,10 +3,9 @@
  * @param {number[]} nums
  */
 var NumArray = function(nums) {
-    this.internalNumArray = nums;
-    this.cache = {};
-    for (var idx = 0; idx < nums.length; ++idx) {
-        this.cache[idx] = {};
+    this.cache = { 0: nums[0] };    // cache[idx] caches sum of [0, idx]
+    for (var idx = 1; idx < nums.length; ++idx) {
+        this.cache[idx] = this.cache[idx - 1] + nums[idx];
     }
 };
 
@@ -16,15 +15,7 @@ var NumArray = function(nums) {
  * @return {number}
  */
 NumArray.prototype.sumRange = function(i, j) {
-    if (this.cache[i][j]) {
-        return this.cache[i][j];
-    }
-    var sum = 0;
-    for (var idx = i; idx <= j; ++idx) {
-        sum += this.internalNumArray[idx];
-    }
-    this.cache[i][j] = sum;  
-    return sum;
+    return i === 0 ? this.cache[j] : this.cache[j] - this.cache[i - 1];
 };
 
 /**
