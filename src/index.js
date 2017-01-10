@@ -1,6 +1,4 @@
 /* for debug only */
 
-var func = require('../src/range-sum-query-mutable');
-var numArray = new func([9, -8]);
-numArray.update(0, 3);
-var result = numArray.sumRange(1, 1);
+var func = require('../src/longest-absolute-file-path');
+var result = func('dir\n\t        file.txt\n\tfile2.txt');
