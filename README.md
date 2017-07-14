@@ -1,2 +1,2 @@
 # leetcode
-The solutions of leetcode questions
+The JavaScript solutions of leetcode questions.
