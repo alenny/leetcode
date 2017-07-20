@@ -18,7 +18,7 @@ const internalFunc = function (nums, begin, length) {
     if (length === 0) {
         return null;
     }
-    const rootIndex = begin + Math.floor(length >>> 2);
+    const rootIndex = begin + (length >>> 1);
     const root = new TreeNode(nums[rootIndex]);
     root.left = internalFunc(nums, begin, rootIndex - begin);
     root.right = internalFunc(nums, rootIndex + 1, begin + length - rootIndex - 1);
