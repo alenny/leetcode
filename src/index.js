@@ -1,4 +1,4 @@
 /* this file is only used for debug purpose */
 
-const func = require('../src/convert-sorted-array-to-bst');
-const result = func([1, 2, 3, 4]);
+const func = require('../src/best-time-stock');
+const result = func([7, 1, 5, 3, 6, 4]);
