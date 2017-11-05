@@ -25,6 +25,10 @@ class MaxHeap {
         this.length = 0;
     }
     pop() {
+        if (this.length === 0) {
+            return undefined;
+        }
+
         // return the top and move the last node to the top
         let top = this.arr[0];
         this.arr[0] = this.arr[this.length - 1];
@@ -52,7 +56,7 @@ class MaxHeap {
         return top;
     }
     peek() {
-        return this.arr[0];
+        return this.length > 0 ? this.arr[0] : undefined;
     }
     insert(node) {
         let idx = this.length++;

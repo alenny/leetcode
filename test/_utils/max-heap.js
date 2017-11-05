@@ -15,6 +15,7 @@ describe('max-heap', function () {
             assert.equal(maxHeap.pop().value, 6);
             assert.equal(maxHeap.pop().value, 2);
             assert.equal(maxHeap.pop().value, 1);
+            assert.equal(maxHeap.pop(), undefined);
         });
     });
 });
