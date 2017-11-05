@@ -15,7 +15,7 @@ function swap(arr, idx0, idx1) {
 }
 
 function maxIndex(arr, idx0, idx1) {
-    return arr[idx0] > arr[idx1] ? idx0 : idx1;
+    return arr[idx0].value > arr[idx1].value ? idx0 : idx1;
 }
 
 class MaxHeap {
@@ -37,13 +37,13 @@ class MaxHeap {
                 break;
             }
             if (right > this.length - 1) {
-                if (this.arr[idx] < this.arr[left]) {
+                if (this.arr[idx].value < this.arr[left].value) {
                     swap(this.arr, idx, left);
                 }
                 break;
             }
             let maxLeftRight = maxIndex(this.arr, left, right);
-            if (this.arr[idx] >= this.arr[maxLeftRight]) {
+            if (this.arr[idx].value >= this.arr[maxLeftRight].value) {
                 break;
             }
             swap(this.arr, idx, maxLeftRight);
@@ -54,12 +54,12 @@ class MaxHeap {
     peek() {
         return this.arr[0];
     }
-    insert(n) {
+    insert(node) {
         let idx = this.length++;
-        this.arr[idx] = n;
+        this.arr[idx] = node;
         while (idx > 0) {
             let pidx = parentIndex(idx);
-            if (this.arr[pidx] >= n) {
+            if (this.arr[pidx].value >= node.value) {
                 break;
             }
             swap(this.arr, idx, pidx);
