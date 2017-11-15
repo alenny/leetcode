@@ -44,7 +44,7 @@ function subsetSum1D(numbers, sum) {
     for (let j = 1; j <= sum; ++j) {
         dp[j] = false;
     }
-    for (let i = 1; i < numbers.length; ++i) {
+    for (let i = 1; i <= numbers.length; ++i) {
         for (let j = sum; j >= numbers[i]; --j) {
             dp[j] = dp[j] || dp[j - numbers[i]];
         }
