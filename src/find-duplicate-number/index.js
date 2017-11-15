@@ -2,7 +2,7 @@
  * @param {number[]} numbers
  * @return {number}
  */
-const findDuplicate1 = function (numbers) {
+const findDuplicate = function (numbers) {
     for (let i = 0; i < numbers.length; ++i) {
         let curr = numbers[i];
         for (let j = i + 1; j < numbers.length; ++j) {
@@ -12,9 +12,6 @@ const findDuplicate1 = function (numbers) {
         }
     }
     return undefined;
-};
-
-const findDuplicate = function (numbers) {
 };
 
 module.exports = findDuplicate;
