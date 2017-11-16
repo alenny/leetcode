@@ -11,6 +11,7 @@ const canPartition = function (numbers) {
         return false;   // odd sum does not have solution
     }
     sum >>= 1;
+    //return subsetSum2D(numbers, sum);
     return subsetSum1D(numbers, sum);
 };
 
@@ -30,8 +31,8 @@ function subsetSum2D(numbers, sum) {
     for (let i = 1; i <= numbers.length; ++i) {
         for (let j = 1; j <= sum; ++j) {
             dp[i][j] = dp[i - 1][j];
-            if (j >= numbers[i]) {
-                dp[i][j] = dp[i][j] || dp[i - 1][j - numbers[i]];
+            if (j >= numbers[i - 1]) {
+                dp[i][j] = dp[i][j] || dp[i - 1][j - numbers[i - 1]];
             }
         }
     }
@@ -44,9 +45,9 @@ function subsetSum1D(numbers, sum) {
     for (let j = 1; j <= sum; ++j) {
         dp[j] = false;
     }
-    for (let i = 1; i <= numbers.length; ++i) {
-        for (let j = sum; j >= numbers[i]; --j) {
-            dp[j] = dp[j] || dp[j - numbers[i]];
+    for (let n of numbers) {
+        for (let j = sum; j >= n; --j) {
+            dp[j] = dp[j] || dp[j - n];
         }
     }
     return dp[sum];
