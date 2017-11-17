@@ -1,6 +1,5 @@
 /* this file is only used for debug purpose */
 
-const func = require('../src/target-sum');
-const assert = require('assert');
-let ret = func([1, 1, 1, 1, 1], 3);
-assert.equal(ret, 5);
+const func = require('../src/task-scheduler');
+let ret = func(['A', 'A', 'A', 'B', 'B', 'B'], 0);
+assert.equal(ret, 6);
