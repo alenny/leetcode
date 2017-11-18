@@ -1,5 +1,4 @@
 /* this file is only used for debug purpose */
 
-const func = require('../src/task-scheduler');
-let ret = func(['A', 'A', 'A', 'B', 'B', 'B'], 0);
-assert.equal(ret, 6);
+const func = require('../src/decode-string');
+let ret = func('3[a2[c]]');
