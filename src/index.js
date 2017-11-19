@@ -1,4 +1,4 @@
 /* this file is only used for debug purpose */
 
-const func = require('../src/decode-string');
-let ret = func('3[a2[c]]');
+const func = require('../src/unique-binary-search-trees');
+let ret = func(3);
