@@ -1,4 +1,3 @@
 /* this file is only used for debug purpose */
-const func = require('../src/construct-binary-tree-from-preorder-inorder');
-const TreeNode = require('../src/_utils/tree-node');
-let ret = func([1, 2, 4, 5, 3], [4, 2, 5, 1, 3]);
+const func = require('../src/search-in-rotated-sorted-array');
+let ret = func([9, 10, 11, 12, 0, 1, 2, 3, 4, 5, 6, 7, 8], 12);
