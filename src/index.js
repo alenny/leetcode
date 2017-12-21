@@ -1,3 +1,5 @@
 /* this file is only used for debug purpose */
-const func = require('../src/3sum');
-let ret = func([-1, 0, 1, 2, -1, -4]);
+const func = require('../src/validate-bst');
+const TreeNode = require('../src/_utils/tree-node');
+let root = new TreeNode(0);
+let ret = func(root);
