@@ -1,5 +1,3 @@
 /* this file is only used for debug purpose */
-const func = require('../src/validate-bst');
-const TreeNode = require('../src/_utils/tree-node');
-let root = new TreeNode(0);
-let ret = func(root);
+const func = require('../src/burst-balloons');
+let ret = func([3, 1, 5, 8]);
