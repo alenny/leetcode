@@ -1,3 +1,3 @@
 /* this file is only used for debug purpose */
-const func = require('../src/sliding-window-maximum');
-let ret = func([9, 10, 9, -7, -4, -8, 2, -6], 5);
+const func = require('../src/maximum-rectangle');
+let ret = func([['1', '0', '1', '0', '0'], ['1', '0', '1', '1', '1'], ['1', '1', '1', '1', '1'], ['1', '0', '0', '1', '0']]);
