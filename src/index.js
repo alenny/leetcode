@@ -1,3 +1,21 @@
 /* this file is only used for debug purpose */
-const func = require('../src/skyline-problem');
-const ret = func([[16493, 367198, 110963], [31742, 366927, 405217], [37703, 87691, 651299], [41248, 869654, 436289], [51724, 170123, 202476], [53803, 865904, 443890], [54954, 57085, 742149], [78199, 232442, 96016], [87989, 822908, 511722], [91936, 370439, 843617], [129310, 848982, 993544], [147944, 916678, 630757], [184561, 862797, 285474], [224787, 804777, 126022], [227369, 785051, 13356], [232129, 371058, 338156], [239439, 789341, 484321], [253287, 744166, 546192], [274734, 974056, 36040], [285849, 726706, 61225], [289850, 751863, 23161], [294444, 752741, 507390], [332254, 718382, 266592], [349122, 506839, 445306], [400749, 958175, 973610], [403076, 567335, 797777], [474175, 782417, 284126], [581879, 749678, 555787], [629971, 706458, 197588], [693204, 719838, 790601], [699649, 812516, 87620], [754216, 922621, 837926], [780619, 869798, 241263]]);
+const func = require('../src/merge-k-sorted-lists');
+const ListNode = require('../src/_utils/list-node');
+let list0 = new ListNode(-8);
+list0.next = new ListNode(-7);
+list0.next.next = new ListNode(-7);
+list0.next.next.next = new ListNode(-5);
+list0.next.next.next.next = new ListNode(1);
+list0.next.next.next.next.next = new ListNode(1);
+list0.next.next.next.next.next.next = new ListNode(3);
+list0.next.next.next.next.next.next.next = new ListNode(4);
+let list1 = new ListNode(-2);
+let list2 = new ListNode(-10);
+list2.next = new ListNode(-10);
+list2.next.next = new ListNode(-7);
+list2.next.next.next = new ListNode(0);
+list2.next.next.next.next = new ListNode(1);
+list2.next.next.next.next.next = new ListNode(3);
+let list3 = new ListNode(2);
+let ret = func([list0, list1, list2, list3]);
+let expected = [-10, -10, -8, -7, -7, -7, -5, -2, 0, 1, 1, 1, 2, 3, 3, 4];
