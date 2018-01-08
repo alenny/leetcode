@@ -1,3 +1,3 @@
 /* this file is only used for debug purpose */
-const func = require('../src/count-and-say');
-const ret = func(4);
+const func = require('../src/reverse-bits');
+const ret = func(4294967295);
