@@ -12,3 +12,5 @@ const containsDuplicate = function (numbers) {
     }
     return false;
 };
+
+module.exports = containsDuplicate;
