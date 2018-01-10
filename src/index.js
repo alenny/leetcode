@@ -1,7 +1,8 @@
 /* this file is only used for debug purpose */
-const func = require('../src/odd-even-linked-list');
-const ListNode = require('../src/_utils/list-node');
-let head = new ListNode(1);
-head.next = new ListNode(2);
-head.next.next = new ListNode(3);
-const ret = func(head);
+const NestedIterator = require('../src/flatten-nested-list-iterator');
+const NestedInteger = require('../src/_utils/nested-integer');
+let iterator = new NestedIterator([new NestedInteger(undefined, [new NestedInteger(1), new NestedInteger(1)]), new NestedInteger(2), new NestedInteger(undefined, [new NestedInteger(1), new NestedInteger(1)])]);
+let ret = [];
+while (iterator.hasNext()) {
+    ret.push(iterator.next());
+}
