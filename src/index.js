@@ -1,3 +1,3 @@
 /* this file is only used for debug purpose */
-const func = require('../src/increasing-triplet-subsequence');
-let ret = func([1, 2, -10, -8, -7]);
+const func = require('../src/gas-station');
+const ret = func([2, 4], [3, 4]);
