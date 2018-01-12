@@ -1,3 +1,3 @@
 /* this file is only used for debug purpose */
-const func = require('../src/gas-station');
-const ret = func([2, 4], [3, 4]);
+const func = require('../src/longest-substring-k-repeating');
+const ret = func('dcbddccbacbcacb', 3);
