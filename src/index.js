@@ -1,3 +1,5 @@
 /* this file is only used for debug purpose */
-const func = require('../src/spiral-matrix');
-let ret = func([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]]);
+// const func = require('../src/word-ladder');
+// let ret = func('hit', 'cog', ["hot", "dot", "dog", "lot", "log", "cog"]);
+const func = require('../src/number-complement');
+let ret = func(5);
