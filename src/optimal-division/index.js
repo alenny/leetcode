@@ -2,13 +2,13 @@
  * @param {number[]} nums
  * @return {string}
  */
-const optimalDivision = function (nums) {
-    if (!nums || nums.length === 0 || nums[0].length === 0) {
+const optimalDivisionDP = function (nums) {
+    if (!nums || nums.length === 0) {
         return '';
     }
     let dp = new Array(nums.length);
     for (let i = 0; i < nums.length; ++i) {
-        dp[i] = new Array(nums[0].length);
+        dp[i] = new Array(nums.length);
         dp[i][i] = { min: nums[i], max: nums[i], minExp: nums[i].toString(), maxExp: nums[i].toString() };
     }
     for (let dist = 1; dist < nums.length; ++dist) {
@@ -31,5 +31,23 @@ const optimalDivision = function (nums) {
     }
     return dp[0][nums.length - 1].maxExp;
 };
+
+const optimalDivision = function (nums) {
+    // very tricky solution since all nums are positive integers
+    if (!nums || nums.length === 0) {
+        return '';
+    }
+    if (nums.length === 1) {
+        return nums[0].toString();
+    }
+    if (nums.length === 2) {
+        return nums[0] + '/' + nums[1];
+    }
+    let ret = nums[0] + '/(' + nums[1];
+    for (let i = 2; i < nums.length; ++i) {
+        ret += '/' + nums[i];
+    }
+    return ret + ')';
+}
 
 module.exports = optimalDivision;
