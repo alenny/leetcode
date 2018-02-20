@@ -1,32 +1,27 @@
 /**
- * @param {number[]} numbers
+ * @param {number[]} nums
  * @param {number} target
  * @return {number}
  */
-const search = function (numbers, target) {
-    if (!numbers || numbers.length === 0) {
-        return -1;
-    }
-    return searchHelper(numbers, 0, numbers.length - 1, target);
+const search = function (nums, target) {
+    return searchHelper(nums, target, 0, nums.length - 1);
 };
 
-function searchHelper(numbers, left, right, target) {
-    if (left > right) {
+function searchHelper(nums, target, begin, end) {
+    if (begin > end) {
         return -1;
     }
-    let middle = left + right >> 1;
-    if (target === numbers[middle]) {
-        return middle;
+    let mid = begin + end >> 1;
+    let midVal = nums[mid];
+    if (midVal === target) {
+        return mid;
     }
-    if ((numbers[left] < numbers[middle] && target < numbers[middle] && target >= numbers[left]) ||
-        (numbers[left] > numbers[middle] && target > numbers[right]) ||
-        (numbers[left] > numbers[middle] && target < numbers[middle])) {
-        return searchHelper(numbers, left, middle - 1, target);
+    if (target < midVal && target >= nums[begin] ||
+        target < midVal && target < nums[begin] && midVal < nums[begin] ||
+        target > midVal && target >= nums[begin] && midVal < nums[begin]) {
+        return searchHelper(nums, target, begin, mid - 1);
     }
-    // numbers[left] < numbers[middle] && target < numbers[left]
-    // numbers[left] < numbers[middle] && target > numbers[middle]
-    // numbers[left] > numbers[middle] && target > numbers[middle] && target <= numbers[right]
-    return searchHelper(numbers, middle + 1, right, target);
+    return searchHelper(nums, target, mid + 1, end);
 }
 
 module.exports = search;
