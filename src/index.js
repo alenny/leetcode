@@ -1,7 +1,7 @@
 /* this file is only used for debug purpose */
 // const func = require('../src/word-ladder');
 // let ret = func('hit', 'cog', ["hot", "dot", "dog", "lot", "log", "cog"]);
-const func = require('../src/substring-with-concatenation-of-all-words');
+const func = require('../src/longest-valid-parentheses');
 //const ListNode = require('../src/_utils/list-node');
 //const TreeNode = require('../src/_utils/tree-node');
 //let ret = func('AB', 2);
@@ -11,4 +11,4 @@ const func = require('../src/substring-with-concatenation-of-all-words');
 //let ret = func("lingmindraboofooowingdingbarrwingmonkeypoundcake", ["fooo", "barr", "wing", "ding", "wing"]);
 //let ret = func("aaa", ["a", "a"]);
 //let ret = func("barfoothefoobarman", ["foo", "bar"]);
-let ret = func("abababab", ["a", "b", "a"]);
+let ret = func("))))((()((");
