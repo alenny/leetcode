@@ -1,7 +1,7 @@
 /* this file is only used for debug purpose */
 // const func = require('../src/word-ladder');
 // let ret = func('hit', 'cog', ["hot", "dot", "dog", "lot", "log", "cog"]);
-const func = require('../src/jump-game-ii');
+const func = require('../src/triangle');
 //const ListNode = require('../src/_utils/list-node');
 //const TreeNode = require('../src/_utils/tree-node');
 //let ret = func('AB', 2);
@@ -11,5 +11,5 @@ const func = require('../src/jump-game-ii');
 //let ret = func("lingmindraboofooowingdingbarrwingmonkeypoundcake", ["fooo", "barr", "wing", "ding", "wing"]);
 //let ret = func("aaa", ["a", "a"]);
 //let ret = func("barfoothefoobarman", ["foo", "bar"]);
-let ret = func([2, 1]);
+let ret = func([[-1], [2, 3], [1, -1, -3]]);
 //let ret = func("abbabaaabbabbaababbabbbbbabbbabbbabaaaaababababbbabababaabbababaabbbbbbaaaabababbbaabbbbaabbbbababababbaabbaababaabbbababababbbbaaabbbbbabaaaabbababbbbaababaabbababbbbbababbbabaaaaaaaabbbbbaabaaababaaaabb", "**aa*****ba*a*bb**aa*ab****a*aaaaaa***a*aaaa**bbabb*b*b**aaaaaaaaa*a********ba*bbb***a*ba*bb*bb**a*b*bb");
