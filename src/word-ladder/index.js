@@ -5,80 +5,62 @@
  * @return {number}
  */
 const ladderLength = function (beginWord, endWord, wordList) {
-    let lengthCache = new Map();
-    let nextCache = new Map();
-    let next = [];
-    for (let word of wordList) {
-        if (isOneDistance(beginWord, word)) {
-            next.push(word);
-        }
-    }
-    nextCache.set(beginWord, next);
-    return getMinLength(lengthCache, nextCache, wordList, beginWord, endWord, new Set());
-};
-
-function getMinLength(lengthCache, nextCache, wordList, beginWord, endWord, wordsOnPath) {
-    if (beginWord === endWord) {
-        return 1;
-    }
-    let subLengthCache = lengthCache.get(beginWord);
-    if (subLengthCache) {
-        let cachedLength = subLengthCache.get(endWord);
-        if (cachedLength) {
-            return cachedLength;
-        }
-    }
-    let minLength = 0;
-    let next = nextCache.get(beginWord);
-    if (!next) {
-        next = [];
-        nextCache.set(beginWord, next);
-        for (let word of wordList) {
-            if (isOneDistance(beginWord, word)) {
-                addRelation(nextCache, beginWord, word);
+    let wordMap = new Map();
+    for (let w of wordList) {
+        for (let i = 0; i < w.length; ++i) {
+            let key = makeKey(w, i);
+            let col = wordMap.get(key);
+            if (!col) {
+                wordMap.set(key, [w]);
+            } else {
+                col.push(w);
             }
         }
     }
-    if (next.length === 0) {
-        return 0;
-    }
-    for (let word of next) {
-        if (wordsOnPath.has(word)) {
-            continue;
+    let visitedWords = new Set();
+    let step = 1;
+    let currWords = [beginWord];
+    let wordsInPrevSteps = new Set();
+    while (step <= wordList.length) {
+        ++step;
+        let nextWords = findTarget(wordMap, currWords, endWord, wordsInPrevSteps);
+        if (nextWords.length === 0) {
+            return 0;
         }
-        wordsOnPath.add(word);
-        let len = getMinLength(lengthCache, nextCache, wordList, word, endWord, wordsOnPath);
-        if (len > 0 && (minLength === 0 || len < minLength)) {
-            minLength = len;
+        if (nextWords[0] === endWord) {
+            return step;
         }
-        wordsOnPath.delete(word);
+        currWords = nextWords;
     }
-    minLength = minLength === 0 ? 0 : minLength + 1;
-    if (!subLengthCache) {
-        subLengthCache = new Map();
-        lengthCache.set(beginWord, subLengthCache);
+    return 0;
+};
+
+function findTarget(wordMap, currWords, endWord, wordsInPrevSteps) {
+    let nextWords = [];
+    for (let w of currWords) {
+        for (let i = 0; i < w.length; ++i) {
+            let key = makeKey(w, i);
+            let col = wordMap.get(key);
+            if (!col) {
+                continue;
+            }
+            for (let nw of col) {
+                if (nw === endWord) {
+                    return [nw];
+                }
+                if (wordsInPrevSteps.has(nw)) {
+                    continue;
+                }
+                nextWords.push(nw);
+                wordsInPrevSteps.add(nw);
+            }
+        }
     }
-    subLengthCache.set(endWord, minLength);
-    return minLength;
+    return nextWords;
 }
 
-function addRelation(nextCache, a, b) {
-    let coll = nextCache.get(a);
-    if (!coll) {
-        nextCache.set(a, [b]);
-    } else {
-        coll.push(b);
-    }
-}
-
-function isOneDistance(a, b) {
-    let diff = 0;
-    for (let i = 0; i < a.length; ++i) {
-        if (a[i] != b[i]) {
-            ++diff;
-        }
-    }
-    return diff === 1;
+function makeKey(word, idx) {
+    return word.substring(0, idx) + '.' + word.substring(idx + 1);
 }
 
 module.exports = ladderLength;

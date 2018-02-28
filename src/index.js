@@ -1,6 +1,6 @@
 /* this file is only used for debug purpose */
-const func = require('../src/maximum-sum-of-3-non-overlapping-subarrays');
+const func = require('../src/word-ladder');
 //const ListNode = require('../src/_utils/list-node');
 //const TreeNode = require('../src/_utils/tree-node');
 //let ret = func('bbbbbabbbbabaababaaaabbababbaaabbabbaaabaaaaababbbababbbbbabbbbababbabaabababbbaabababababbbaaababaa', 'babaaaabbababbbabbbbaabaabbaabbbbaabaaabaababaaaabaaabbaaabaaaabaabaabbbbbbbbbbbabaaabbababbabbabaab', 'babbbabbbaaabbababbbbababaabbabaabaaabbbbabbbaaabbbaaaaabbbbaabbaaabababbaaaaaabababbababaababbababbbababbbbaaaabaabbabbaaaaabbabbaaaabbbaabaaabaababaababbaaabbbbbabbbbaabbabaabbbbabaaabbababbabbabbab');
-let ret = func([1, 2, 1, 2, 6, 7, 5, 1], 2);
+let ret = func("hit", "cog", ["hot", "dot", "dog", "lot", "log", "cog"]);
