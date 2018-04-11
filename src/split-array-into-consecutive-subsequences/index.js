@@ -22,7 +22,7 @@ const isPossible = function (nums) {
             let sci = seqCounts.length - 1;
             while (sci >= 0) {
                 if (sameCount < seqCounts[sci].count) {
-                    if (num - seqCounts[sci].beginNum < 3) {
+                    if (nums[sameBegin - 1] - seqCounts[sci].beginNum < 2) {
                         return false;
                     }
                     if (sameCount === 0) {
