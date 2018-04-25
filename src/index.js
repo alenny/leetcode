@@ -1,7 +1,7 @@
 /* this file is only used for debug purpose */
-const func = require('../src/24-game');
+const func = require('../src/split-array-largest-sum');
 //const ListNode = require('../src/_utils/list-node');
 //const TreeNode = require('../src/_utils/tree-node');
 //const TreeLinkNode = require('../src/_utils/tree-link-node');
 let ret;
-ret = func([1, 2, 1, 2]);
+ret = func([7, 2, 5, 10, 8], 2);
