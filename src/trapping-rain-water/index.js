@@ -9,7 +9,7 @@ class HeightInfo {
     }
 };
 
-const trap = function (height) {
+const trapBySortingHeights = function (height) {
     if (!height || height.length < 3) {
         return 0;
     }
@@ -41,5 +41,25 @@ function calArea(height, sortedHeight, sortedIndex, left, right, isLeftHigh) {
     area += calArea(height, sortedHeight, sortedIndex, left, newLeft, isLeftHigh) + calArea(height, sortedHeight, sortedIndex, newRight, right, isLeftHigh);
     return area;
 }
+
+const trap = function (height) {
+    let left = 0, right = height.length - 1, totalWater = 0;
+    while (left < right) {
+        if (height[left] < height[right]) {
+            let idx = left + 1;
+            while (idx < right && height[idx] <= height[left]) {
+                totalWater += height[left] - height[idx++];
+            }
+            left = idx;
+        } else {
+            let idx = right - 1;
+            while (idx > left && height[idx] <= height[right]) {
+                totalWater += height[right] - height[idx--];
+            }
+            right = idx;
+        }
+    }
+    return totalWater;
+};
 
 module.exports = trap;
