@@ -38,6 +38,13 @@
             "processId": "${command:PickProcess}",
             "port": 5858,
             "sourceMaps": false
+        },
+        {
+            "name": "Java Debug",
+            "type": "java",
+            "request": "launch",
+            "mainClass": "Program",
+            "args": ""
         }
     ]
 }
